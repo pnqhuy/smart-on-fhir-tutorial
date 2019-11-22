@@ -25,7 +25,8 @@
       }
       FHIR.oauth2.ready(function(smart){
         smart.patient.read().then(function(pt) {
-          displayPatient(pt);
+          //displayPatient(pt);
+          $("#output").html("<h1>Hello</h1>");
         }
       });
   </body>
