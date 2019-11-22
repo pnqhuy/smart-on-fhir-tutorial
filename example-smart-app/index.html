@@ -23,6 +23,12 @@
         var pt = patient.read();
         console.log(JSON.stringify({ x: 5, y: 6 }));
         console.log(JSON.stringify(pt));
+        
+        console.log(typeof pt.name[0]);
+        //fname = patient.name[0].given.join(' ');
+        //lname = patient.name[0].family.join(' ');
+        }
+        
       }
     });
     </script>
