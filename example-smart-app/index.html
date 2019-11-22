@@ -20,19 +20,15 @@
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-      function displayPatient(pt) {
-        $("#output").html("<p>" + JSON.stringify(pt) + "</p>"); 
-      }
+//       function displayPatient(pt) {
+//         $("#output").html("<p>" + JSON.stringify(pt) + "</p>"); 
+//       }
       FHIR.oauth2.ready(function(smart) {
-        smart.patient.read()
-        .then(function(pt) {
+	        smart.patient.read().then(function(pt) {
           //displayPatient(pt);
           $("#output").html("<h1>Hello1</h1>");
-        })
-        .catch(function(err) {
-          $("#output").html("<h1>Hello2</h1>");
-        });  
-      });
+    });  
+});
      </script>
   </body>
 </html>
