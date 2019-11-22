@@ -33,7 +33,7 @@
 
  FHIR.oauth2.ready(function(smart){
 	smart.patient.read().then(function(pt) {
-		$("#output").html("<h1>Hello1</h1>");
+		$("#output").html("<h1>" + JSON.stringify(pt) + "</h1>");
 	});
 });
       
