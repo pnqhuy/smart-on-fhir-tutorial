@@ -12,7 +12,7 @@
     -->
   </head>
   <body>
-    <div id="patient"></div>
+    <div id="output"></div>
     <!--
     <script src='./src/js/example-smart-app.js'></script>
     -->
@@ -20,14 +20,32 @@
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-      FHIR.oauth2.ready().then(function(client) {
-        client.patient.read().then(
-          function(pt) {
-            document.getElementById("patient").innerText = JSON.stringify(pt, null, 4);
-          },
-          function(error) {
-            document.getElementById("patient").innerText = error.stack;
-          }
+      function display(data) {
+         var text = data instanceof Error ? String(data) : JSON.stringify(data, null, 4);
+         $("#output").html("<p>" + text + "</p>");
+      }
+      FHIR.oauth2.ready().then(client => client.request("Patient"))
+      .then(display)
+      .catch(display);
+      
+      
+      
+      
+</script>
+      
+      
+      FHIR.oauth2.ready(client => client.request(`Patient/${client.patient.id}`));
+      
+      FHIR.oauth2.ready(function(smart) {
+        
+        if (smart.hasOwnProperty('patient')) {
+          var patient = smart.patient;
+          var pt = patient.read();
+          $('#debug').html('<p>' + JSON.stringify(pt) + '</p>'); 
+        }
+        else {
+          $('#debug').html('<p>Testing2</p>'); 
+        }
       });
     </script>
   </body>
