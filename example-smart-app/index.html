@@ -23,7 +23,7 @@
       FHIR.oauth2.ready(function(smart) {
         
         if (smart.hasOwnProperty('patient')) {
-          var patient = smart.patient;
+          var patient = smart.patient.read();
           $('#debug').html('<p>' + JSON.stringify(patient) + '</p>'); 
         }
         else {
