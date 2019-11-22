@@ -24,7 +24,7 @@
         
         if (smart.hasOwnProperty('patient')) {
           var patient = smart.patient;
-          $('#debug').html('<p>Testing1</p>'); 
+          $('#debug').html('<p>' + JSON.stringify(patient) + '</p>'); 
         }
         else {
           $('#debug').html('<p>Testing2</p>'); 
