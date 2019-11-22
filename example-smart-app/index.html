@@ -23,8 +23,9 @@
       FHIR.oauth2.ready(function(smart) {
         
         if (smart.hasOwnProperty('patient')) {
-          var patient = smart.patient.read();
-          $('#debug').html('<p>' + JSON.stringify(patient) + '</p>'); 
+          var patient = smart.patient;
+          var pt = patient.read();
+          $('#debug').html('<p>' + JSON.stringify(pt) + '</p>'); 
         }
         else {
           $('#debug').html('<p>Testing2</p>'); 
