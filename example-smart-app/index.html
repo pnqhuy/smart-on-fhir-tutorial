@@ -21,14 +21,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
       FHIR.oauth2.ready(function(smart) {
-        $('#debug').html('<p>Testing</p>');  
-//         if (smart.hasOwnProperty('patient')) {
-//           var patient = smart.patient;
-//           document.getElementById('debug').innerHTML("<h3>Pass</h3>");
-//         }
-//         else {
-//           document.getElementById('debug').innerHTML("<h3>Fail</h3>");
-//         }
+        
+        if (smart.hasOwnProperty('patient')) {
+          var patient = smart.patient;
+          $('#debug').html('<p>Testing1</p>'); 
+        }
+        else {
+          $('#debug').html('<p>Testing2</p>'); 
+        }
       });
     </script>
   </body>
