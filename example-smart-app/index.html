@@ -27,26 +27,6 @@
       FHIR.oauth2.ready().then(client => client.request("Patient"))
       .then(display)
       .catch(display);
-      
-      
-      
-      
-</script>
-      
-      
-      FHIR.oauth2.ready(client => client.request(`Patient/${client.patient.id}`));
-      
-      FHIR.oauth2.ready(function(smart) {
-        
-        if (smart.hasOwnProperty('patient')) {
-          var patient = smart.patient;
-          var pt = patient.read();
-          $('#debug').html('<p>' + JSON.stringify(pt) + '</p>'); 
-        }
-        else {
-          $('#debug').html('<p>Testing2</p>'); 
-        }
-      });
     </script>
   </body>
 </html>
