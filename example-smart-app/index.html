@@ -23,10 +23,10 @@
       FHIR.oauth2.ready(function(smart) {
         if (smart.hasOwnProperty('patient')) {
           var patient = smart.patient;
-          document.getElementById("debug").innerHTML(JSON.stringify(patient));
+          document.getElementById('debug').innerHTML("<h3>Pass</h3>");
         }
         else {
-          document.getElementById("debug").innerHTML('Error');
+          document.getElementById('debug').innerHTML("<h3>Fail</h3>");
         }
       });
     </script>
