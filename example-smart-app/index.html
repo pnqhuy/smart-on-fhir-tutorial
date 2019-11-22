@@ -23,12 +23,22 @@
 //       function displayPatient(pt) {
 //         $("#output").html("<p>" + JSON.stringify(pt) + "</p>"); 
 //       }
-      FHIR.oauth2.ready(function(smart) {
+//      FHIR.oauth2.ready(function(smart) {
 //	        smart.patient.read().then(function(pt) {
           //displayPatient(pt);
-          $("#output").html("<h1>Hello1</h1>");
+//          $("#output").html("<h1>Hello1</h1>");
     //});  
+//});
+      
+
+ FHIR.oauth2.ready(function(smart){
+	smart.patient.read().then(function(pt) {
+		$("#output").html("<h1>Hello1</h1>");
+	});
 });
+      
+      
+      
      </script>
   </body>
 </html>
