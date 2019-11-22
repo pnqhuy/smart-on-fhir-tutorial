@@ -23,11 +23,15 @@
       function displayPatient(pt) {
         $("#output").html("<p>" + JSON.stringify(pt) + "</p>"); 
       }
-      FHIR.oauth2.ready(function(smart){
-        smart.patient.read().then(function(pt) {
+      FHIR.oauth2.ready(function(smart) {
+        smart.patient.read()
+        .then(function(pt) {
           //displayPatient(pt);
-          $("#output").html("<h1>Hello</h1>");
-        }
+          $("#output").html("<h1>Hello1</h1>");
+        })
+        .catch(function(err) {
+          $("#output").html("<h1>Hello2</h1>");
+        });  
       });
   </body>
 </html>
