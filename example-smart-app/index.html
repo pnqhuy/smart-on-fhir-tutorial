@@ -37,9 +37,16 @@
 	function getPatientName2 (pt) {
 	    names = [];
 	    if (pt.name) {
-	     	names = pt.name	    
+	     	names = pt.name	  		    
 	    }
-	    console.log(names)	   
+	    console.log(names)	  
+	    console.log(typeof names[0].use);
+	    console.log(typeof names[0].text);
+	    console.log(typeof names[0].family);
+	    console.log(typeof names[0].given);
+	    console.log(typeof names[0].period);
+	    console.log(typeof names[0].suffix);
+	    console.log(typeof names[0].prefix);
 	    return names
 	}   
 	    
