@@ -33,7 +33,17 @@
 
  FHIR.oauth2.ready(function(smart){
 	smart.patient.read().then(function(pt) {
-		$("#output").html("<h1>" + JSON.stringify(pt) + "</h1>");
+		var names = "Unknown";
+		if (pt.name) {
+		    names = pt.name.given.join(" ") + " " + pt.name.family.join(" ");
+		    names = names.join(" / ") 	
+		}
+		$("#output").html("<h1>" + names + "</h1>");
+		
+// 		$("#output").html("<h1>" + JSON.stringify(pt) + "</h1>");
+		
+		
+		
 	});
 });
       
