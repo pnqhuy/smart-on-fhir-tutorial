@@ -39,8 +39,8 @@
             if (pt.name) {
                 var names = pt.name.map(function(name) {
 		    x = "<li>" + name.use + " | " + name.text + " | " + 
-			    moment(name.period.start).format("LLTS") + " | " + 
-			    moment(name.period.end).format("LLTS") + "</li>";	
+			    moment(name.period.start).format("DD/MM/YYYY HH:mm:ss") + " | " + 
+			    moment(name.period.end).format("DD/MM/YYYY HH:mm:ss") + "</li>";	
                     console.log(x);
 		    return x;
                 });
