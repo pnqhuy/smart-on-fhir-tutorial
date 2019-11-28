@@ -13,6 +13,7 @@
   </head>
   <body>
     <div id="output"></div>
+    <div id="output2"></div>	  
     <!--
     <script src='./src/js/example-smart-app.js'></script>
     -->
@@ -20,6 +21,18 @@
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
+	    
+	    function getPatientName (pt) {
+            if (pt.name) {
+                var names = pt.name.map(function(name) {
+                    return name.given.join(" ") + " " + name.family.join(" ");
+                });
+                return names.join(" / ")
+            } else {
+                return "anonymous";
+            }
+        }
+	    
 //       function displayPatient(pt) {
 //         $("#output").html("<p>" + JSON.stringify(pt) + "</p>"); 
 //       }
@@ -47,7 +60,8 @@ FHIR.oauth2.ready(function(smart){
 // 		}
 // 		$("#output").html("<h1>" + names + "</h1>");
 		
- 		$("#output").html("<h1>" + JSON.stringify(pt) + "</h1>");
+ 		$("#output2").html("<h1>" + getPatientName (pt) + "</h1>");
+		$("#output").html("<h1>" + JSON.stringify(pt) + "</h1>");
 		
 		
 		
