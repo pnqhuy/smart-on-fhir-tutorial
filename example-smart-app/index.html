@@ -35,8 +35,7 @@
             }
         }
 	 
-	function getPatientName3 (pt) {
-	return name.given.join(" ") + " " + name.family.join(" ");	
+	function getPatientName3 (pt) {	
             if (pt.name) {
                 var names = pt.name.map(function(name) {
 		    x = "<li>" + name.given.join(" ") + " | " + name.family.join(" ") + " | " +
