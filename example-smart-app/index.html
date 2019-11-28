@@ -20,7 +20,8 @@
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>	  
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>	  	  
     <script>
 	    
 	    function getPatientName (pt) {
@@ -45,8 +46,8 @@
 	    console.log(typeof names[0].family);
 	    console.log(typeof names[0].given);
 	    console.log(typeof names[0].period);
-	    console.log(typeof names[0].suffix);
-	    console.log(typeof names[0].prefix);
+	    console.log(typeof names[0].period.start);
+	    console.log(typeof names[0].period.end);
 	    return names
 	}   
 	    
