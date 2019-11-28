@@ -38,9 +38,13 @@
 	function getPatientName3 (pt) {
             if (pt.name) {
                 var names = pt.name.map(function(name) {
-                    return "<li>" + name.use + " | " + name.text + " | " + name.period.start + " | " + name.period.end + "</li>";
+		    x = "<li>" + name.use + " | " + name.text + " | " + name.period.start + " | " + name.period.end + "</li>";	
+                    console.log(x);
+		    return x;
                 });
-                return "<ul> + names.join("") + "</ul>";
+		y = "<ul> + names.join("") + "</ul>";
+		console.log(y);
+                return y; 
             } else {
                 return "<p>Blank</p>";
             }
