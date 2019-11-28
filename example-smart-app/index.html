@@ -34,6 +34,18 @@
                 return "anonymous";
             }
         }
+	 
+	function getPatientName3 (pt) {
+            if (pt.name) {
+                var names = pt.name.map(function(name) {
+                    return "<li>" + name.use + " | " + name.text + " | " + name.period.start + " | " + name.period.end + "</li>";
+                });
+                return "<ul> + names.join("") + "</ul>";
+            } else {
+                return "<p>Blank</p>";
+            }
+        }
+
 	    
 	function getPatientName2 (pt) {
 	    names = [];
@@ -81,7 +93,7 @@ FHIR.oauth2.ready(function(smart){
  		getPatientName2 (pt);
 		$("#outputa").html("<h1>" + "Testing" + " " + getPatientName (pt) + "</h1>");
 		//$("#output").html("<h1>" + JSON.stringify(pt) + "</h1>");
-		
+		$("#output").html(getPatientName3(pt));
 		
 		
 	});
